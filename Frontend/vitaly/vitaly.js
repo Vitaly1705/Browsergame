@@ -27,11 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // Check if HP is zero
       if (hp === 0) {
-        updateHpBar();
-        alert('Game over! You ran out of HP.');
+        hpBar.style.width = 0;
+        setTimeout(() => {
+          alert('Game over! You ran out of HP.');
+        }, "200");
+     
         // You can add more logic here, such as resetting the game.
         // For simplicity, let's reload the page for now.
-        location.reload();
+        // location.reload();
       }
     });
   
