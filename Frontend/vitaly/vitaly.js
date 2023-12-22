@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
           alert('Game over! You ran out of HP.');
         }, "200");
      
-        // You can add more logic here, such as resetting the game.
-        // For simplicity, let's reload the page for now.
         // location.reload();
       }
     });
