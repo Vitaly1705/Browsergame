@@ -1,0 +1,12 @@
+1.
+Die API Startest du unter C:\Users\DEIN_USER\Desktop\Browsergame> so in Etwa sollte der Pfad aussehen einfach das Terminal öffnen dann musst du "node server.js" eingeben, fertig.
+Dann sollte da stehen Server läuft auf http://localhost:3000 
+wenn ja dann ist die API Richtig am Laufen.
+
+2.
+Angular starten:
+Drück rechtsklich auf Astarok Open in Interegrated terminal der Pfad sollte dann cirka so aussehen: C:\Users\DEIN_USER\Desktop\Browsergame\Astarok>
+hier gibst du entweder "ng serve" ein oder "ng serve --o" dann öffnet sich die seite direkt.
+
+3.
+bei weiteren fragen Kontakttier mich einfach ich beantworte dir einfach alles :)
