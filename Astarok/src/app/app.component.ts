@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChatService } from './chat.service';
+import { APIService } from './API.service';
 import { interval } from 'rxjs';
 
 @Component({
@@ -10,19 +10,18 @@ import { interval } from 'rxjs';
 export class AppComponent {
   textArray!: any[];
   newText!: any;
-  user: string = 'King';
-  userId: number = 1;
+  user: string = 'Vitaly';
+  userId: number = 4;
 
 
-  constructor(private ChatService: ChatService) { }
+  constructor(private Service: APIService) { }
 
   ngOnInit() {
     this.textArray = []
 
-    interval(5000).subscribe(() => {
-      this.ChatService.getText().subscribe(data => {
+    interval(2000).subscribe(() => {
+      this.Service.getText().subscribe(data => {
         this.setTime(data.textArray)
-        console.log(data.textArray)
       });
     });
 
@@ -49,7 +48,7 @@ export class AppComponent {
 
   addText() {
     if(this.user && this.newText){
-      this.ChatService.postText(this.userId,this.user, this.newText).subscribe(data => {
+      this.Service.postText(this.userId,this.user, this.newText).subscribe(data => {
         this.setTime(data.textArray)
         this.newText = '';
       });

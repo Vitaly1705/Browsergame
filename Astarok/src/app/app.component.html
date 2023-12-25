@@ -1,29 +1,25 @@
-<!-- src/app/app.component.html -->
-
 <div class="Chatbody">
-  <div *ngIf="textArray">
-    <div class="scrollbar">
+    <div *ngIf="textArray" class="chatbox">
       <ul class="text-list">
         <li *ngFor="let entry of textArray">
           <div class="bubble" *ngIf="entry.id != userId">
             <div>
-              [ {{entry.user}} ]: {{entry.text}}
+              <strong>[ {{entry.user}} ]:</strong> {{entry.text}}
             </div> {{entry.timestamp}}
           </div>
           <div class="bubble2" *ngIf="entry.id == userId">
             <div>
-              [ {{entry.user}} ]: {{entry.text}}
+              <strong>[ {{entry.user}} ]:</strong> {{entry.text}}
             </div> {{entry.timestamp}}
           </div>
         </li>
       </ul>
-  
+
     </div>
-    
+
     <div class="inputbody">
       <input class="input" type="text" [(ngModel)]="newText">
-      <button (click)="addText()" class="add-button">Senden</button>
+      <!-- <button (click)="addText()" class="add-button">Senden</button> -->
     </div>
     <div *ngIf="newText"> {{newText.length}}:500</div>
   </div>
-</div>

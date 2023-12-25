@@ -9,4 +9,6 @@ Drück rechtsklich auf Astarok Open in Interegrated terminal der Pfad sollte dan
 hier gibst du entweder "ng serve" ein oder "ng serve --o" dann öffnet sich die seite direkt.
 
 3.
+Inhalt im Chat wird nur solange gespeichert wie die API Läuft oder nach 2 Stunden inaktiven chat wird auch alles gelöscht um den Ram des servers zu clearn.
+ "Eigentlich unnötig aber man weiß ja nie"
 bei weiteren fragen Kontakttier mich einfach ich beantworte dir einfach alles :)
