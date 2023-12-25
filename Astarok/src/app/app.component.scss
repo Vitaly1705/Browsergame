@@ -1,0 +1,63 @@
+.Chatbody {
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.50);
+  padding: 10px;
+  border-radius: 5px;
+
+
+  .text-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 400px;
+    min-height: 400px;
+    overflow-y: scroll;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.5);
+
+    .bubble {
+      background-color: rgba(0, 0, 0, 0.60);
+      color: white;
+      padding: 8px;
+      margin-bottom: 2px;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+  }
+}
+
+
+
+.inputbody {
+  display: flex;
+  width: 100%;
+
+  input {
+    font-size: 16px;
+    padding: 8px;
+
+    &:focus {
+      outline: none; // Entferne den Fokus-Rahmen
+    }
+  }
+
+  .input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .add-button {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(109, 182, 0);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+}

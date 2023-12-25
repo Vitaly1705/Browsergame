@@ -1,0 +1,24 @@
+<!-- src/app/app.component.html -->
+
+<div class="Chatbody">
+  <div *ngIf="textArray">
+    <div class="scrollbar">
+      <ul class="text-list">
+        <li *ngFor="let entry of textArray">
+          <div class="bubble">
+            <div>
+              [ {{entry.user}} ]: {{entry.text}}
+            </div> {{entry.timestamp}}
+          </div>
+        </li>
+      </ul>
+  
+    </div>
+    
+    <div class="inputbody">
+      <input class="input" type="text" [(ngModel)]="newText">
+      <button (click)="addText()" class="add-button">Senden</button>
+    </div>
+    <div *ngIf="newText"> {{newText.length}}:500</div>
+  </div>
+</div>
