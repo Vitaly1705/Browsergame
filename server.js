@@ -14,16 +14,25 @@ const textArray = [];
 let idCounter = 1;
 
 app.get('/text', (req, res) => {
-  res.json({ textArray });
+  const formattedTextArray = textArray.map(entry => ({
+    id: entry.id,
+    user: entry.user,
+    text: entry.text,
+    timestamp: entry.timestamp,
+    time: entry.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+  }));
+
+  res.json({ textArray: formattedTextArray });
 });
 
 app.post('/text', (req, res) => {
   const { id, user, text } = req.body;
 
   if (id && user && text) {
-    const entry = { id, user, text, timestamp: new Date() };
+    const timestamp = new Date();
+    const entry = { id, user, text, timestamp, time: timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
     textArray.push(entry);
-    res.json({ success: true, textArray });
+    res.json({ success: true, textArray }); // Hier haben wir formattedTextArray durch textArray ersetzt
   } else {
     res.status(400).json({ success: false, message: 'ID, Benutzer oder Text fehlen im Anfragekörper.' });
   }
