@@ -1,14 +1,16 @@
-// server.js
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const registerRouter = require('./register'); 
+const loginRouter = require('./login'); 
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ credentials: true }));
+app.use('/register', registerRouter); 
+app.use('/login', loginRouter);
 
 const textArray = [];
 let idCounter = 1;
@@ -38,13 +40,35 @@ app.post('/text', (req, res) => {
   }
 });
 
+app.post('/register', (req, res) => {
+  const result = registerUser(req.body);
+
+  if (result.error) {
+    res.status(400).json({ success: false, message: result.error });
+  } else {
+    res.json({ success: true, message: result.message });
+  }
+});
+
+app.post('/login', (req, res) => {
+  const result = loginUser(req.body);
+
+  if (result.error) {
+    res.status(401).json({ success: false, message: result.error });
+  } else {
+    res.json({ success: true, message: result.message, token: result.token });
+  }
+});
+
 setInterval(() => {
   if (textArray.length > 0) {
     console.log('TextArray wird nach 2 Stunden geleert.');
     textArray.length = 0;
     idCounter = 1; // Setze den Zähler zurück
   }
-}, 2 * 60 * 60 * 1000); // 2 Stunden in Millisekunden
+}, 1 * 60 * 60 * 1000); // 2 Stunden in Millisekunden
+
+
 
 app.listen(port, () => {
   console.log(`Server läuft auf http://localhost:${port}`);

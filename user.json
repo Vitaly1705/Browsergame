@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Vitaly",
+    "username": "Zital",
+    "email": "vitaly@web.de",
+    "password": "Asdf1234",
+    "id": 1
+  },
+  {
+    "name": "Alex",
+    "username": "Aläkz",
+    "email": "alex-iljuschenko@web.de",
+    "password": "Asdf1234",
+    "id": 2
+  }
+]
