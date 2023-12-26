@@ -12,5 +12,12 @@
     "email": "alex-iljuschenko@web.de",
     "password": "Asdf1234",
     "id": 2
+  },
+  {
+    "name": "Vitaly",
+    "username": "tester",
+    "email": "Familia@iljuschenko.de",
+    "password": "asdf1234",
+    "id": 3
   }
 ]

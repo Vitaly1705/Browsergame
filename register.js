@@ -13,11 +13,13 @@ if (fs.existsSync(userFilePath)) {
   users = JSON.parse(fileContent);
 }
 
-let idCounter = 1;
-
 // Funktion zur Generierung von IDs
 function generateUserId() {
-  return idCounter++;
+  // Ermittle die höchste vorhandene ID
+  const maxId = users.reduce((max, user) => (user.id > max ? user.id : max), 0);
+
+  // Erstelle eine neue ID, indem 1 zur höchsten ID addiert wird
+  return maxId + 1;
 }
 
 router.post('/', (req, res) => {

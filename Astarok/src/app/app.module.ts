@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './chat/chat.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     ChatComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

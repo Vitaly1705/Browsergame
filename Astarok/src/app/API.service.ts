@@ -6,24 +6,26 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class APIService {
-  private baseUrl = 'http://localhost:3000/text'; // Passe die URL an deine Server-URL an
+  private chatUrl = 'http://localhost:3000/text';
+  private APIUrl = 'http://localhost:3000';
   private Key = ""
 
   constructor(private http: HttpClient) { }
 
   getText(): Observable<any> {
-    return this.http.get(this.baseUrl);
+    return this.http.get(this.chatUrl);
   }
 
   postText(id: number, user: string, text: string): Observable<any> {
-    return this.http.post(this.baseUrl, { id, user, text });
+    return this.http.post(this.chatUrl, { id, user, text });
   }
 
   register(user: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/register`, user);
+    console.log(user)
+    return this.http.post(`${this.APIUrl}/register`, user);
   }
 
   login(credentials: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/login`, credentials);
+    return this.http.post(`${this.APIUrl}/login`, credentials);
   }
 }
